@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    </head>
+    <style>
+    *{
+        box-sizing: border-box;
+        } 
+        html{
+           scroll-behavior: smooth;
+       }
+       body{
+           font-family:  Open Sans, sans-serif;
+           width: 100%;
+           height: 100%;
+           margin: 0 auto;
+           padding: 0;
+           background-color: #DDE8E8;
+       }
+    
+    .logo{
+        flex: 1;
+        font-weight: bold;
+        cursor: pointer;
+        }
+        
+    
+    body{
+        font-family: ubuntu;
+    }
+    
+    nav{
+        background: #222;
+        padding: 5px 50px;
+    }
+    
+    ul{
+        list-style-type: none;
+    }
+    a{
+        color: white;
+        text-decoration:none; 
+    }
+    a:hover{
+        text-decoration: none;
+        color: white !important;
+        
+    }
+    
+    .menu li{
+        font-size: 25px;
+        padding: 15px 5px;
+        
+    }
+    
+    .menu li a{
+        display: block;
+    }
+    
+    .logo a{
+        font-size: 40px;
+    }
+    .logo a:hover{
+        text-decoration: none;
+    }
+    
+    .button.secondary{
+        border-bottom: 1px #444 solid;
+    }
+    .item{
+        /* justify-content: space-around; */
+    }
+    .item:hover {
+       background-color: #444;
+    }
+    
+    /* Mobile Menu */
+    .menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .toggle{
+        order: 1;
+    }
+    
+    .item.button{
+        order: 2;
+    }
+    
+    .item{
+        width: 100%;
+        text-align: center;
+        order: 3;
+        display: none;
+    }
+    
+    .item.active{
+        display: block;
+    }
+    
+    .toggle {
+        cursor: pointer;
+    }
+    
+    .bars{
+        background: #999;
+        display: inline-block;
+        height: 2px;
+        position: relative;
+        width: 19px;
+    }
+    
+    .bars::before,.bars::after{
+        background: #999;
+        content: "";
+        display: inline-block;
+        height: 2px;
+        position: absolute;
+        width: 19px;
+    }
+    
+    .bars::before{
+        top: 5px;
+    }
+    
+    .bars::after{
+        top: -5px;
+    }
+    
+    /* Tablet Menu */
+    @media all and (min-width:458px){
+        .menu{
+       justify-content: center;
+        }
+    
+        .logo{
+       flex: 1;
+       font-weight: bold;
+       cursor: pointer;
+       }
+       .logo:hover{
+           text-decoration: none;
+    
+       }
+    
+     
+        .toggle{
+       order: 2;
+       display: block;
+        }
+    
+    
+        
+    }
+    
+    @media all and (min-width:768px){
+        .item{
+       display: block;
+       width: auto;
+        }
+    
+        .toggle{
+       display: none;
+        }
+    
+        .toggle:active {
+       transition: all .25s ease;
+        }
+    
+        .logo{
+       order: 0;
+        }
+    
+        .item{
+       order: 1;
+        }
+    
+       
+    
+        .menu li{
+      padding: 15px 10px; 
+        }
+    
+        .menu li button{
+       padding-right: 0;
+        }
+    }
+    /*Footer*/
+        footer {
+           height: auto;
+           font-family: 'Ubuntu', sans-serif;
+           position: absolute;
+           bottom: 0;
+           width: 100%;
+    
+       }
+       .top-footer {
+           height: 55px;
+           background-color: #000000;
+       }
+       .bottom-footer {
+       height: auto;
+       background-color:#C4C4C4;
+       color: #fff;
+       display: flex;
+       flex-direction: row;
+       }
+         .bottom-footer a {
+           text-decoration: none;
+           color: #fff;
+         }
+       .bottom-footer .name {
+           font-style: normal;
+           font-weight: bold;
+           font-size: 25px;
+           padding:15px 20px 10px 20px;
+           width: 20%;
+           
+       
+       }
+       .bottom-footer .copyright {
+           font-weight: 400;
+           font-size: 25px;
+               padding-top:15px; 
+               padding-right: 40px;
+           width: 63%;
+       text-align: right;
+        word-spacing: 0.3rem;
+        
+       }
+       .bottom-footer .icon{
+           font-weight: 500;
+           font-size: 36px;
+           width: 18%;
+           padding-top:8px; 
+           padding-left: 80px;
+            word-spacing: 1rem;
+       
+       }
+    
+           @media (max-width: 800px) {
+                 .bottom-footer {
+       flex-direction: column;
+       }
+        .bottom-footer .icon{
+           width: 100%;
+           text-align: center;
+           padding: 3px;
+           }
+           .bottom-footer .copyright {
+               width: 100%;
+               font-size: 20px;
+               text-align: center;
+               padding:8px;
+       
+           }
+           .bottom-footer .name {
+               width: 100%;
+               text-align: center;
+               font-size: 22px;
+               padding: 8px;
+           }
+       }
+    header a{display:inline-block; width:60px;}
+    *, *:before, *:after {
+    box-sizing: border-box;
+    }
+    
+    body {
+    font-family: 'Open Sans', sans-serif;
+    }
+    
+    .meet {
+    position: relative;
+    font-size: 64px;
+    line-height: 87px;
+    text-align: center;
+    }
+    
+    .meet:after {
+    content: "";
+    position: absolute;
+    border-top: 10px solid black;
+    left: 46%;
+    bottom: -10px;
+    margin-left: -15px;
+    width: 150px;
+    height: 0px;
+    border-radius: 5px;
+    }
+    
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    }
+    
+    .column {
+    flex-grow: 1;
+    width: 25%;
+    margin: 20px 2%;
+    padding: 0 10px;
+    }
+    
+    .card {
+    box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.3);
+    }
+    
+    .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10px;
+    overflow: hidden;
+    }
+    
+    .container::after, 
+    .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    
+    .user-img {
+    border-radius: 100%;
+    }
+    
+    .text {
+    text-align: center;
+    }
+    
+    .name {
+    font-size: 36px;
+    line-height: 49px;
+    }
+    
+    .title {
+    color: rgba(0,0,0,0.85);
+    }
+    
+    p {
+    font-size: 18px;
+    line-height: 25px;
+    }
+    
+    .button {
+    border: none;
+    border-radius: 30px;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #060541;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    }
+    
+    .button:hover {
+    background-color: blue;
+    }
+    
+    
+    .slant:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background:  #CAC9D9;
+    transform-origin: 100% 0;
+    transform: skew(-65deg);
+    z-index: -1;
+    }
+    
+    .icon {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    }
+    
+    .icon:only-of-type {
+    margin-right: 40px;
+    }
+    
+    .socials {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(199, 195, 195, 0.1);
+    padding-left: 40px;
+    padding-top: 5px;
+    }
+    Responsive
+    @media screen and (max-width: 620px) {
+    .column {
+    width: 100%;
+    display: block;
+    }
+    
+    .slant:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background:  #CAC9D9;
+    transform-origin: 100% 0;
+    transform: skew(-65deg);
+    z-index: -1;
+    }
+    
+    .meet {
+    font-size: 50px;
+    }
+    
+    .meet:after {
+    left: 38%;
+    }
+    }
+    
+    @media (min-width: 620px) and (max-width: 920px) {
+    
+    .column {
+    width: 45%;
+    }
+    
+    .meet:after {
+    left: 42.5%;
+    }
+    }
+    </style>
+    </head>
+    <body>
+    <ul class="menu">
+    <li class="logo"><a href="#">DOCUFIX</a></li>
+    <li class="item"><a href="#">About Us</a></li>
+    <li class="item"><a href="#">Team</a></li>
+    <li class="item"><a href="#">Sponsors</a></li>
+    <li class="toggle"><span class="bars"></span></a></li>
+    </ul>
+    </nav>
+    
+    <main>
+    <a href="#" style="position: fixed; bottom:0;">WORK IN PROGRESS</a>
+    </main>
+    <footer>
+    <div class="top-footer">
+    
+    </div>
+    <div class="bottom-footer">
+    <span class="name"><p> DOCUFIX</p></span>
+    <span class="copyright"><p class="text-center"> &copy Copyright 2019 Docufix.io and HNG6 affiliates</p></span>
+    <span class="icon mr-5">
+    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    </span>
+    </div>
+    </footer>
+    <script>
+    
+    $(function() {
+    $(".toggle").on("click", function(){
+    if($(".item").hasClass("active")){
+    $(".item").removeClass("active");
+    } else{
+    $(".item").addClass("active");
+    }
+    })
+    });
+    
+    </script>
+    
+        <h2 class="meet">MEET OUR TEAM</h2>
+        <br>
+        
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              
+              <div class="container">
+                <div class="slant"></div>
+                <img class="user-img" src="https://res.cloudinary.com/maphorbs/image/upload/v1571193118/images_zclxr3.jpg" alt="Member" style="width:150px; height:150px">
+                <div class="text">
+                    <h2 class="name">Steven Kobe</h2>
+                    <p class="title">Creative Director</p>
+                    <p>lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem.</p>
+                </div>
+                <button class="button">Contact</button>
+              </div>
+              <div class="social">
+              <header style="text-align:center"> 
+                  <a href="https://twitter.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191391/twitter_rkr1yl.png" alt="Twitter"></a>
+                  <a href="https://www.instagram.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191627/download_o5sg95.jpg" alt="Instagram"></a>
+                  <a href="https://www.linkedin.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191609/download_b1sxbe.png" alt="LinkedIn"></a>
+                  <a href="https://mail.google.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191349/google-plus_qrojck.png" alt="Google"></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              
+              <div class="container">
+                <div class="slant"></div>
+                <img class="user-img" src="https://res.cloudinary.com/maphorbs/image/upload/v1571193118/images_zclxr3.jpg" alt="Member" style="width:150px; height:150px">
+                <div class="text">
+                    <h2 class="name">Samad Hamid</h2>
+                    <p class="title">Backend Engineer</p>
+                    <p>lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem.</p>
+                </div>
+                <button class="button">Contact</button>
+              </div>
+              <div class="social">
+              <header style="text-align:center"> 
+                  <a href="https://twitter.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191391/twitter_rkr1yl.png" alt="Twitter"></a>
+                  <a href="https://www.instagram.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191627/download_o5sg95.jpg" alt="Instagram"></a>
+                  <a href="https://www.linkedin.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191609/download_b1sxbe.png" alt="LinkedIn"></a>
+                  <a href="https://mail.google.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191349/google-plus_qrojck.png" alt="Google"></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              
+              <div class="container">
+                <div class="slant"></div>
+                <img class="user-img" src="https://res.cloudinary.com/maphorbs/image/upload/v1571193118/images_zclxr3.jpg" alt="Member" style="width:150px; height:150px">
+                <div class="text">
+                    <h2 class="name">Paula White</h2>
+                    <p class="title">Lead Designer</p>
+                    <p>lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem.</p>
+                </div>
+                <button class="button">Contact</button>
+              </div>
+              <div class="social">
+              <header style="text-align:center"> 
+                  <a href="https://twitter.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191391/twitter_rkr1yl.png" alt="Twitter"></a>
+                  <a href="https://www.instagram.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191627/download_o5sg95.jpg" alt="Instagram"></a>
+                  <a href="https://www.linkedin.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191609/download_b1sxbe.png" alt="LinkedIn"></a>
+                  <a href="https://mail.google.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191349/google-plus_qrojck.png" alt="Google"></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              
+              <div class="container">
+                <div class="slant"></div>
+                <img class="user-img" src="https://res.cloudinary.com/maphorbs/image/upload/v1571193118/images_zclxr3.jpg" alt="Member" style="width:150px; height:150px">
+                <div class="text">
+                    <h2 class="name">Steven Kobe</h2>
+                    <p class="title">Creative Director</p>
+                    <p>lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem.</p>
+                </div>
+                <button class="button">Contact</button>
+              </div>
+              <div class="Social">
+              <header style="text-align:center"> 
+                  <a href="https://twitter.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191391/twitter_rkr1yl.png" alt="Twitter"></a>
+                  <a href="https://www.instagram.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191627/download_o5sg95.jpg" alt="Instagram"></a>
+                  <a href="https://www.linkedin.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191609/download_b1sxbe.png" alt="LinkedIn"></a>
+                  <a href="https://mail.google.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191349/google-plus_qrojck.png" alt="Google"></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              
+              <div class="container">
+                <div class="slant"></div>
+                <img class="user-img" src="https://res.cloudinary.com/maphorbs/image/upload/v1571193118/images_zclxr3.jpg" alt="Member" style="width:150px; height:150px">
+                <div class="text">
+                    <h2 class="name">Samad Hamid</h2>
+                    <p class="title">Backend Engineer</p>
+                    <p>lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem.</p>
+                </div>
+                <button class="button">Contact</button>
+              </div>
+              <div class="social">
+              <header style="text-align:center"> 
+                  <a href="https://twitter.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191391/twitter_rkr1yl.png" alt="Twitter"></a>
+                  <a href="https://www.instagram.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191627/download_o5sg95.jpg" alt="Instagram"></a>
+                  <a href="https://www.linkedin.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191609/download_b1sxbe.png" alt="LinkedIn"></a>
+                  <a href="https://mail.google.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191349/google-plus_qrojck.png" alt="Google"></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              
+              <div class="container">
+                <div class="slant"></div>
+                <img class="user-img" src="https://res.cloudinary.com/maphorbs/image/upload/v1571193118/images_zclxr3.jpg" alt="Member" style="width:150px; height:150px">
+                <div class="text">
+                    <h2 class="name">Paula White</h2>
+                    <p class="title">Lead Designer</p>
+                    <p>lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem lorem ipsum ipsum lorem.</p>
+                </div>
+                <button class="button">Contact</button>
+              </div>
+              <div class="social">
+              <header style="text-align:center"> 
+                  <a href="https://twitter.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191391/twitter_rkr1yl.png" alt="Twitter"></a>
+                  <a href="https://www.instagram.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191627/download_o5sg95.jpg" alt="Instagram"></a>
+                  <a href="https://www.linkedin.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191609/download_b1sxbe.png" alt="LinkedIn"></a>
+                  <a href="https://mail.google.com"><img class="icon" src="https://res.cloudinary.com/maphorbs/image/upload/v1571191349/google-plus_qrojck.png" alt="Google"></a> 
+              </div>
+             </div>
+          </div>
+          
+        </div>
+    
+    </body>
+</html>
